@@ -23,10 +23,15 @@ function run(comando) {
 
 async function baixarAudio(url, destino) {
 
-    await run(
-        `yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 -o "${destino}" "${url}"`
+   await run(
+        `yt-dlp \
+        --cookies /app/cookies.txt \
+        --extractor-args "youtube:player_client=android" \
+        -x \
+        --audio-format mp3 \
+        -o "${destino}" \
+        "${url}"`
     );
-
     return destino;
 }
 
