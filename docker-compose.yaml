@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    container_name: transcricao-api
+    ports:
+      - "8003:8003"
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  worker:
+    build: .
+    container_name: transcricao-worker
+    command: node src/worker.js
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped

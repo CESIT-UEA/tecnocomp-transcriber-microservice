@@ -1,0 +1,21 @@
+{
+  "name": "yt-dlp-service",
+  "version": "1.0.0",
+  "description": "Container Docker com:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.18.0",
+    "bullmq": "^5.78.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "ioredis": "^5.11.1",
+    "uuid": "^14.0.0"
+  }
+}
