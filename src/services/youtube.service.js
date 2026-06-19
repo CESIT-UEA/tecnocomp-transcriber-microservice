@@ -26,7 +26,7 @@ async function baixarAudio(url, destino) {
    await run(
         `yt-dlp \
         --js-runtimes node:/usr/local/bin/node \
-        --extractor-args "youtube:player_client=mweb;youtubepot-bgutilhttp:base_url=http://bgutil-provider:4416" \
+        --extractor-args "youtube:getpot_bgutil_baseurl=http://bgutil-provider:4416" \
         -x \
         --audio-format mp3 \
         -o "${destino}" \
