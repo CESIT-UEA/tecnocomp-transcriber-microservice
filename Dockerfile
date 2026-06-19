@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install --break-system-packages \
     yt-dlp \
-    faster-whisper
+    faster-whisper \
+    bgutil-ytdlp-pot-provider
 
 WORKDIR /app
 
