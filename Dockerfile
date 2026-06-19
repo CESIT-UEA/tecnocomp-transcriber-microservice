@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install --break-system-packages \
     yt-dlp \
     faster-whisper \
-    bgutil-ytdlp-pot-provider
+    bgutil-ytdlp-pot-provider \
+    requests \
+    curl_cffi
 
 WORKDIR /app
 
