@@ -24,15 +24,8 @@ function run(comando) {
 async function baixarAudio(url, destino) {
 
    await run(
-        `yt-dlp \
-        --proxy "https://invidious.nerdvpn.de"
-        --js-runtimes node:/usr/local/bin/node \
-        --extractor-args "youtube:getpot_bgutil_baseurl=http://bgutil-provider:4416" \
-        -x \
-        --audio-format mp3 \
-        -o "${destino}" \
-        "${url}"`
-    );
+    `yt-dlp --proxy "https://invidious.nerdvpn.de" --js-runtimes node:/usr/local/bin/node --extractor-args "youtube:getpot_bgutil_baseurl=http://bgutil-provider:4416" -x --audio-format mp3 -o "${destino}" "${url}"`
+);
 
     return destino;
 }
