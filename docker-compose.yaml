@@ -22,6 +22,8 @@ services:
     ports:
       - "6379:6379"
     restart: unless-stopped
+    volumes:
+    - ./cookies.txt:/cookies.txt:ro
 
   bgutil-provider:
     image: brainicism/bgutil-ytdlp-pot-provider
