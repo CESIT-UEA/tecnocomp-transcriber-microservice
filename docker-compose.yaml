@@ -16,7 +16,7 @@ services:
       - redis
     restart: unless-stopped
     volumes:
-      - /home/kaue/cookies.txt:/cookies.txt:ro
+      - /home/kaue/cookies.txt:/cookies.txt
 
   redis:
     image: redis:7
