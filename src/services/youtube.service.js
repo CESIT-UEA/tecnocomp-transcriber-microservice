@@ -23,7 +23,15 @@ function run(comando) {
 
 async function baixarAudio(url, destino) {
   await run(
-    `yt-dlp --cookies /cookies.txt --js-runtimes node:/usr/local/bin/node --extractor-args "youtubepot-bgutilhttp:base_url=http://bgutil-provider:4416" -x --audio-format mp3 -o "${destino}" "${url}"`
+    `yt-dlp \
+      --cookies /cookies.txt \
+      --remote-components ejs:github \
+      --js-runtimes node:/usr/local/bin/node \
+      --extractor-args "youtubepot-bgutilhttp:base_url=http://bgutil-provider:4416" \
+      -x \
+      --audio-format mp3 \
+      -o "${destino}" \
+      "${url}"`
   );
 
   return destino;
