@@ -24,6 +24,7 @@ function run(comando) {
 async function baixarAudio(url, destino) {
   await run(
     `yt-dlp \
+      --proxy "${process.env.YTDLP_PROXY}" \
       --cookies /cookies.txt \
       --remote-components ejs:github \
       --js-runtimes node:/usr/local/bin/node \
